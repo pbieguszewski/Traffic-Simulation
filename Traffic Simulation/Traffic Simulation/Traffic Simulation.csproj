@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1904A069-3F74-4D70-A00F-80F8BA11DEA7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Traffic_Simulation</RootNamespace>
+    <AssemblyName>Traffic Simulation</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Car.cs" />
+    <Compile Include="CarInfo.cs" />
+    <Compile Include="Light.cs" />
+    <Compile Include="Points.cs" />
+    <Compile Include="Simulation.xaml.cs">
+      <DependentUpon>Simulation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TrafficPlan.cs" />
+    <Compile Include="WhereIsNow.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Simulation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Picture\mapa.PNG" />
+    <Resource Include="Picture\mario.png" />
+    <Resource Include="Picture\pic.png" />
+    <Resource Include="Picture\pikachu.png" />
+    <Resource Include="Picture\star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Aleje_East_Entry_Rondo.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Aleje_East_Exit_1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Aleje_East_Exit_2.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Aleje_East_Right_Bitwy.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Aleje_Entry_Left_Bitwy.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Aleje_West_Entry_1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Aleje_West_Entry_2.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Aleje_West_Entry_Bitwy.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Aleje_West_Exit_1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Aleje_West_Exit_2.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Bitwy_North_Entry_1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Bitwy_North_Entry_2.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Bitwy_North_Entry_Left_Rondo.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Bitwy_North_Exit_1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Bitwy_North_Exit_2.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Bitwy_North_Left_Exit.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Bitwy_North_Right_Aleje.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Bitwy_South_Entry_1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Bitwy_South_Entry_2.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Bitwy_South_Exit_1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Bitwy_South_Exit_2.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Bitwy_South_Right_Aleje.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Rondo_1_East_Entry_Rondo_2.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Rondo_1_Inside_Left_Entry_Rondo_2.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Rondo_1_North_Entry_Rondo_2.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Rondo_1_South_Entry_Rondo_2.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Rondo_1_South_Inside_Rondo_2_Inside.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Rondo_1_West_Entry_Rondo_2.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Rondo_2_East_Exit.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Rondo_2_Inside_Left_Entry_Rondo_3.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Rondo_2_North_Entry_Rondo_3.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Rondo_2_South_Exit.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Rondo_2_South_Inside_Exit.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Rondo_2_West_Exit.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Rondo_3_Inside_Left_exit.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Rondo_3_North_Exit.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Trace\Rondo_East_Inside.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

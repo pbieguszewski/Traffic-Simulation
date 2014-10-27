@@ -1,0 +1,10 @@
+﻿<Window x:Class="Traffic_Simulation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Simulation" Height="150" Width="220" ResizeMode="CanMinimize" Background="Azure" KeyDown="Window_KeyDown">
+    <Grid>
+        <Label Content="Enter count of cars..." FontSize="15" HorizontalAlignment="Center" Height="30" Margin="5,5,5,76"/>
+        <TextBox TextAlignment="Center" FontSize="20" Name="box" Height="30" Margin="5" MaxLength="7" Text="Enter number" PreviewMouseLeftButtonUp="box_PreviewMouseLeftButtonUp"/>
+        <Button Content="START" Height="30" Margin="5,76,5,5" Click="Start"/>
+    </Grid>
+</Window>
